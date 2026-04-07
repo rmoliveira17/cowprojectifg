@@ -6,9 +6,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from ultralytics import YOLO
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.utils.geometry_func import KEYPOINT_MAP
-from src.features.build_features import build_xgb_feature_dict
+from utils.geometry_func import KEYPOINT_MAP
+from features.build_features import build_xgb_feature_dict
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
 
@@ -22,7 +25,7 @@ def parse_args():
     )
     parser.add_argument(
         "--dataset-root",
-        default="data/datasets/classifications",
+        default="src/data/datasets/classifications",
         help="Raiz do dataset de classificação com fold_*/train/images, fold_*/val/images e test/images.",
     )
     parser.add_argument(
@@ -32,7 +35,7 @@ def parse_args():
     )
     parser.add_argument(
         "--output-csv",
-        default="data/datasets/classifications/geometric_features.csv",
+        default="src/data/datasets/classifications/geometric_features.csv",
         help="CSV consolidado de features geométricas.",
     )
     parser.add_argument(

@@ -1,5 +1,5 @@
 import numpy as np
-from src.utils.geometry_func import (
+from utils.geometry_func import (
     calculate_distance, 
     calculate_angle, 
     KEYPOINT_MAP, 
@@ -9,10 +9,10 @@ from src.utils.geometry_func import (
 
 def build_feature_dict(points: np.ndarray) -> dict:
     features = {}
-    
+
     # Inverter KEYPOINT_MAP para dicionário de name -> index
     name_to_idx = {name: idx for idx, name in KEYPOINT_MAP.items()}
-    
+
     # Calcula as distâncias entre conexões predefinidas
     for p1_name, p2_name in POINT_CONNECTIONS:
         if p1_name in name_to_idx and p2_name in name_to_idx:
@@ -36,8 +36,9 @@ def build_feature_dict(points: np.ndarray) -> dict:
                 p3 = points[idx3]
                 angle = calculate_angle(p1, p2, p3)
                 features[f"angle_{p1_name}_{p2_name}_{p3_name}".replace(" ", "_")] = angle
-                
+
     return features
+
 
 def build_xgb_feature_dict(points: np.ndarray) -> dict:
     """Suporte retroativo às referências legadas para extração de ML."""

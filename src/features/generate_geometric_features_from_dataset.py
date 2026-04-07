@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 from ultralytics import YOLO
 
-from src.utils.geometry_func import KEYPOINT_MAP
-from src.features.build_features import build_feature_dict
+from features.build_features import build_feature_dict
+from utils.geometry_func import KEYPOINT_MAP
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
 
@@ -21,17 +21,17 @@ def parse_args():
             "usando modelo YOLO de keypoints."
         )
     )
-    parser.add_argument("--dataset-root", default="data/datasets/classifications", help="Diretório raiz do dataset de classificação.")
+    parser.add_argument("--dataset-root", default="src/data/datasets/classifications", help="Diretório raiz do dataset de classificação.")
     parser.add_argument("--fold", type=int, default=0, help="Fold a utilizar para train/val (padrão: 0).")
-    parser.add_argument("--model-path", default="src/models/yolo/yolo11x-pose.pt", help="Modelo YOLO pose para extração de keypoints.")
+    parser.add_argument("--model-path", default="src/models/yolo/best.pt", help="Modelo YOLO pose para extração de keypoints.")
     parser.add_argument(
         "--output-csv",
-        default="data/datasets/classifications/geometric_features.csv",
+        default="src/data/datasets/classifications/geometric_features.csv",
         help="CSV de saída com as features geométricas.",
     )
     parser.add_argument(
         "--output-report",
-        default="data/datasets/classifications/geometric_features_report.json",
+        default="src/data/datasets/classifications/geometric_features_report.json",
         help="JSON de relatório do processo de extração.",
     )
     return parser.parse_args()

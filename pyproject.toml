@@ -3,30 +3,36 @@ name = "cowprojectifg"
 version = "0.1.0"
 description = "Classification of cows via computer vision"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "fastapi==0.116.1",
     "gdown>=5.2.0",
+    "joblib>=1.3.0",
     "matplotlib>=3.10.0",
     "numpy==2.1.3",
     "opencv-python-headless==4.12.0.88",
     "pandas>=2.2.3",
     "pillow>=11.1.0",
+    "plotly>=5.17.0",
     "python-multipart==0.0.20",
     "pyyaml==6.0.3",
     "requests>=2.32.3",
-    "scikit-learn==1.8.0",
+    "scikit-learn>=1.5.2,<1.6.0",
     "seaborn>=0.13.2",
     "streamlit>=1.41.0",
+    "streamlit-option-menu>=0.3.2",
     "torch==2.10.0",
     "torchvision==0.25.0",
-    "ultralytics==8.3.193",
+    "ultralytics==8.4.24",
     "uvicorn==0.35.0"
 ]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/data", "src/features", "src/models", "src/utils"]
 
 [tool.uv.sources]
 torch = { index = "pytorch-cpu" }

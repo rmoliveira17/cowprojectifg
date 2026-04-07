@@ -4,8 +4,8 @@ import seaborn as sns
 from pathlib import Path
 
 def main():
-    csv_path = Path("data/datasets/classifications/geometric_features.csv")
-    out_dir = Path("data/eda_results")
+    csv_path = Path("src/data/datasets/classifications/geometric_features.csv")
+    out_dir = Path("src/data/eda_results")
     out_dir.mkdir(parents=True, exist_ok=True)
     
     if not csv_path.exists():

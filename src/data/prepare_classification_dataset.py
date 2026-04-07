@@ -30,12 +30,12 @@ def parse_args():
     )
     parser.add_argument(
         "--input-root",
-        default="data/fotos_classificar",
+        default="src/data/fotos_classificacao",
         help="Diretório com imagens originais (preferencialmente em subpastas por classe).",
     )
     parser.add_argument(
         "--output-root",
-        default="data/datasets/classifications",
+        default="src/data/datasets/classifications",
         help="Diretório de saída para treino e avaliação de classificação.",
     )
     parser.add_argument(

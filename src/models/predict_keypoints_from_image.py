@@ -4,8 +4,11 @@ from pathlib import Path
 
 import cv2
 from ultralytics import YOLO
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.utils.geometry_func import KEYPOINT_MAP
+from utils.geometry_func import KEYPOINT_MAP
 
 
 def parse_args():

@@ -5,8 +5,8 @@ import json
 import urllib.parse
 from sklearn.model_selection import KFold, train_test_split
 
-PASTA_ORIGINAL = "data/fotos_anotadas"
-BASE_DIR = "data/datasets/keypoints"
+PASTA_ORIGINAL = "src/data/fotos_rotuladas"
+BASE_DIR = "src/data/datasets/keypoints"
 DATASET_DIR = "00_dataset"
 PASTA_LINKS = os.path.join(PASTA_ORIGINAL, DATASET_DIR)
 
