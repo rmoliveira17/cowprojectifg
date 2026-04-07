@@ -121,5 +121,5 @@ python src/models/train_random_forest.py
 
 Este projeto é conduzido pelas seguintes diretrizes sob a instituição IFG:
 
-- **Renato Milhoem** (@rmoliveira17)
+- **Renato Milhomem** (@rmoliveira17)
 - **Felipe Crispim** (Desenvolvimento)
